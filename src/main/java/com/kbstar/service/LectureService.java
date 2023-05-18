@@ -3,7 +3,7 @@ package com.kbstar.service;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.kbstar.dto.Lecture;
-import com.kbstar.dto.Study;
+import com.kbstar.dto.LectureSearch;
 import com.kbstar.frame.KBService;
 import com.kbstar.mapper.LectureMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,4 +47,7 @@ public class LectureService implements KBService<Integer, Lecture> {
         return mapper.getpage();
     }
 
+    public List<Lecture> search(LectureSearch ls) throws Exception{
+        return mapper.search(ls);
+    }
 }

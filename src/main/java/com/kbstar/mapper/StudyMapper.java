@@ -13,5 +13,5 @@ import java.util.List;
 public interface StudyMapper extends KBMapper<Integer, Study> {
     Page<Study> getpage() throws Exception;
 
-    public List<Study> getMyStudy(String studentId) throws Exception;
+    public List<Study> getMyStudy(String writer) throws Exception;
 }

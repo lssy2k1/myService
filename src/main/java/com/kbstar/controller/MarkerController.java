@@ -1,6 +1,5 @@
 package com.kbstar.controller;
 
-import com.kbstar.dto.Lecture;
 import com.kbstar.dto.Marker;
 import com.kbstar.service.MarkerService;
 
@@ -105,4 +104,14 @@ public class MarkerController {
 
         return "redirect:/marker/all";
     }
+
+    @RequestMapping("/delete")
+    public String delete(Model model, Integer id) throws Exception {
+        markerService.remove(id);
+        return "redirect:/marker/all";
+    }
+
+
+
+
 }

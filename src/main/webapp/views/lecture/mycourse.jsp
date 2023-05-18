@@ -178,8 +178,6 @@
                 $('#sumCnt').text(cnt);
             });
 
-
-
             $('#checked_del_btn').click(function () {
                 my_course.send();
             });

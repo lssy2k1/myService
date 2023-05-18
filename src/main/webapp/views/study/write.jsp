@@ -167,7 +167,7 @@
                             <h3>UPLOAD STUDY JOURNAL</h3>
                             <form id="study_upload">
                                 <div class="form-group">
-                                    <input type="hidden" name="studentId" class="form-control" id="studentId"
+                                    <input type="hidden" name="writer" class="form-control" id="writer"
                                            value="${loginStudent.id}">
                                 </div>
                                 <div class="form-group">

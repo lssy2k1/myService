@@ -1,5 +1,6 @@
 package com.kbstar.dto;
-
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 import lombok.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -9,8 +10,13 @@ import org.springframework.web.multipart.MultipartFile;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Student {
+    @Size(min=5, max=10, message="ID는 5자리 이상 10자리 이하입니다.")
+    @NotEmpty(message="PASSWORD는 5이상 12자리 이하입니다.")
     private String id;
+    @Size(min=5, max=12, message="PASSWORD는 5이상 12자리 이하입니다.")
+    @NotEmpty(message="PASSWORD는 5이상 12자리 이하입니다.")
     private String pwd;
+    @NotEmpty(message="이름을 입력하세요.")
     private String name;
     private String detail;
     private String email;

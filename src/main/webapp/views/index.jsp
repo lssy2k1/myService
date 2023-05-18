@@ -59,7 +59,7 @@
                                     </ul>
                                 </li>
                                 <li><a href="/anc/allpage">Board</a></li>
-                                <li><a href="/apply">Chat</a></li>
+<%--                                <li><a href="/apply">Chat</a></li>--%>
                                 <li class="has-sub">
                                     <a href="javascript:void(0)">Courses</a>
                                     <ul class="sub-menu">
@@ -67,21 +67,23 @@
                                         <li><a href="/lecture/mycourse?id=${loginStudent.id}">My Course</a></li>
                                     </ul>
                                 </li>
-                                <li class="has-sub">
-                                    <a href="javascript:void(0)">Study</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="/study/allpage">Study Board</a></li>
-                                        <li><a href="/study/chart">Study Chart</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-sub">
-                                    <!--메뉴명 추후 정정 예정-->
-                                    <a href="javascript:void(0)">BlahBlah</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="/att_check">Attendance</a></li>
-                                        <li><a href="#">Diagosis</a></li>
-                                    </ul>
-                                </li>
+                                <li><a href="/study/allpage">Study</a></li>
+<%--                                <li class="has-sub">--%>
+<%--                                    <a href="javascript:void(0)">Study</a>--%>
+<%--                                    <ul class="sub-menu">--%>
+<%--                                        <li><a href="/study/allpage">Study Board</a></li>--%>
+<%--                                        <li><a href="/study/chart">Study Chart</a></li>--%>
+<%--                                    </ul>--%>
+<%--                                </li>--%>
+                                <li><a href="/att_check">Attendance</a></li>
+<%--                                <li class="has-sub">--%>
+<%--                                    <!--메뉴명 추후 정정 예정-->--%>
+<%--                                    <a href="javascript:void(0)">BlahBlah</a>--%>
+<%--                                    <ul class="sub-menu">--%>
+<%--                                        <li><a href="/att_check">Attendance</a></li>--%>
+<%--                                        <li><a href="#">Diagosis</a></li>--%>
+<%--                                    </ul>--%>
+<%--                                </li>--%>
                                 <li><a href="/mypage">MyPage</a></li>
                                 <li><a href="/logout">LOGOUT</a></li>
                             </c:when>

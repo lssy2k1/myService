@@ -45,7 +45,7 @@ public class StudyService implements KBService<Integer, Study> {
         return mapper.getpage();
     }
 
-    public List<Study> getMyStudy(String studentId) throws Exception{
-        return mapper.getMyStudy(studentId);
+    public List<Study> getMyStudy(String writer) throws Exception{
+        return mapper.getMyStudy(writer);
     }
 }

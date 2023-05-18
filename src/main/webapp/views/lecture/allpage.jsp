@@ -30,10 +30,6 @@
                         <div class="filters">
                             <ul>
                                 <li class="active"><a href = "">All</a></li>
-                                <li><a href = "">Back-End</a></li>
-                                <li>Front-End</li>
-                                <li data-filter=".att">Certificate</li>
-                                <li data-filter=".att">ETC</li>
                             </ul>
                         </div>
                     </div>
@@ -59,7 +55,7 @@
                             </c:forEach>
                         </div>
                     </div>
-                        <jsp:include page="../page.jsp"/>
+                    <jsp:include page="../page.jsp"/>
                 </div>
             </div>
         </div>

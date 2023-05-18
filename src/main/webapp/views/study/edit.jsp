@@ -180,8 +180,8 @@
                                 <div class="form-group">
                                     <input type="hidden" name="id" class="form-control" id="id"
                                            value="${study.id}">
-                                    <input type="hidden" name="studentId" class="form-control" id="studentId"
-                                           value="${study.studentId}">
+                                    <input type="hidden" name="writer" class="form-control" id="writer"
+                                           value="${study.writer}">
                                 </div>
                                 <div class="form-group">
                                     <div style="width:50%; float:left;">

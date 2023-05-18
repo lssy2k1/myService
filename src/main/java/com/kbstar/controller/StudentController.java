@@ -1,10 +1,8 @@
 package com.kbstar.controller;
 
-import com.github.pagehelper.PageInfo;
 import com.kbstar.dto.Myblog;
 import com.kbstar.dto.Mypage;
 import com.kbstar.dto.Student;
-import com.kbstar.dto.Study;
 import com.kbstar.service.MyblogService;
 import com.kbstar.service.MypageService;
 import com.kbstar.service.StudentService;

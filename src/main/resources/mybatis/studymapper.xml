@@ -5,43 +5,43 @@
 <mapper namespace="com.kbstar.mapper.StudyMapper">
 
     <select id="getMyStudy" parameterType="string" resultType="study">
-        SELECT dy.id, dy.studentId, dy.startTime, dy.EndTime
+        SELECT dy.id, dy.writer, dy.startTime, dy.EndTime
              , dy.contents, dy.fileName_org, dy.fileName
              , de.name AS studentName, de.img AS studentImg
              , dy.rdate
         FROM study dy, student de
-        WHERE dy.studentId = de.id
-        AND dy.studentId=#{studentId}
+        WHERE dy.writer = de.id
+        AND dy.writer=#{writer}
     </select>
 
     <select id="select" parameterType="Integer" resultType="study">
-        SELECT dy.id, dy.studentId, dy.startTime, dy.EndTime
+        SELECT dy.id, dy.writer, dy.startTime, dy.EndTime
              , dy.contents, dy.fileName_org, dy.fileName
              , de.name AS studentName, de.img AS studentImg
              , dy.rdate
         FROM study dy, student de
-        WHERE dy.studentId = de.id
+        WHERE dy.writer = de.id
         AND dy.ID=#{id}
         ORDER BY rdate DESC
     </select>
 
     <select id="selectall" resultType="study">
-        SELECT dy.id, dy.studentId, dy.startTime, dy.EndTime
+        SELECT dy.id, dy.writer, dy.startTime, dy.EndTime
              , dy.contents, dy.fileName_org, dy.fileName
              , de.name AS studentName, de.img AS studentImg
              , dy.rdate
         FROM study dy, student de
-        WHERE dy.studentId = de.id
+        WHERE dy.writer = de.id
         ORDER BY rdate DESC
     </select>
 
     <insert id="insert" parameterType="study">
-        INSERT INTO study VALUES (study_seq.NEXTVAL,#{studentId},#{startTime},#{endTime}
+        INSERT INTO study VALUES (study_seq.NEXTVAL,#{writer},#{startTime},#{endTime}
                                 ,#{contents},TO_CHAR(SYSDATE,'yyyy.MM.dd hh24:mi:ss'),#{fileName},#{fileName_org})
     </insert>
 
     <update id="update" parameterType="study">
-        UPDATE study SET studentId=#{studentId}, startTime=#{startTime}, endTime=#{endTime}
+        UPDATE study SET writer=#{writer}, startTime=#{startTime}, endTime=#{endTime}
                         ,contents=#{contents}, fileName=#{fileName},fileName_org=#{fileName_org}
                        WHERE id=#{id}
     </update>
@@ -51,12 +51,12 @@
     </delete>
 
     <select id="getpage" resultType="study">
-        SELECT dy.id, dy.studentId, dy.startTime, dy.EndTime
+        SELECT dy.id, dy.writer, dy.startTime, dy.EndTime
              , dy.contents, dy.fileName_org, dy.fileName
              , de.name AS studentName, de.img AS studentImg
              , dy.rdate
         FROM study dy, student de
-        WHERE dy.studentId = de.id
+        WHERE dy.writer = de.id
         ORDER BY id DESC
     </select>
 

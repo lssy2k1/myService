@@ -78,7 +78,14 @@
                         <div class="col-lg-12" style="margin:0 auto;">
                             <div class="main-button-red">
                                 <a href="javascript:history.back()">Back To Course List</a>
-                                <a href="/marker/edit?id=${marker.id}">EDIT</a>
+                                <c:choose>
+                                    <c:when test="${obj.writer==loginStudent.id}">
+                                        <a href="/marker/edit?id=${marker.id}">EDIT</a>
+                                        <a href="/marker/delete?id=${marker.id}">DELETE</a>
+                                    </c:when>
+                                    <c:otherwise>
+                                    </c:otherwise>
+                                </c:choose>
                             </div>
                         </div>
                     </div>

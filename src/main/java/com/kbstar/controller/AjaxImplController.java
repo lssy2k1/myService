@@ -12,7 +12,9 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -21,6 +23,7 @@ import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -148,6 +151,17 @@ public class AjaxImplController {
             ja.add(jo);
         }
         return ja;
+    }
+
+    @RequestMapping("/checkeddelimpl")
+    public String checkeddelimpl(@PathVariable("checkedIds")String[] checkedIds)  throws Exception {
+
+        for(String i:checkedIds){
+            Integer I = Integer.parseInt(i);
+            cartService.remove(I);
+        }
+
+        return "success";
     }
 
 }

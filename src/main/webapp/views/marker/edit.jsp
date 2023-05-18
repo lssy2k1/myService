@@ -64,7 +64,7 @@
         send: function () {
             $('#marker_form').attr({
                 method : 'post',
-                action : '/marker/addimpl',
+                action : '/marker/editimpl',
                 enctype: 'multipart/form-data'
             });
             $('#marker_form').submit();

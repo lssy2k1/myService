@@ -74,16 +74,23 @@
         text-align: center;
     }
 
-    .thumbnail-jmt {
-        border-top-right-radius: 20px;
-        border-top-left-radius: 20px;
-        border-bottom-right-radius: 20px;
-        border-bottom-left-radius: 20px;
-    }
+  .thumbnail-jmt {
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+  #courses {
+    padding-top: 30px;
+  }
 
-    #courses {
-        padding-top: 30px;
-    }
+  .markerTitleTag {
+    color: #6b6b6b;
+  }
+
+  .markerTitleTag:hover {
+    color:#6b6b6b;
+  }
 </style>
 
 
@@ -116,37 +123,39 @@
 </section>
 
 <section class="our-courses" id="courses">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-heading">
-                    <h2>Our Popular Courses</h2>
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <div class="owl-courses-item owl-carousel">
-                    <c:forEach var="c" items="${marker}">
-                        <div class="item thumbnail-jmt">
-                            <a href="/marker/detail?id=${c.id}"><img src="/uimg/${c.img}"
-                                                                     style="border-top-right-radius: 20px; border-top-left-radius: 20px;"></a>
-                            <div class="down-content"
-                                 style="border-bottom-right-radius: 20px; border-bottom-left-radius: 20px;">
-                                <h4><a href="/marker/detail?id=${c.id}">${c.title}</a></h4>
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="col-4">
-                                            <span>${c.detail}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </c:forEach>
-                </div>
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="section-heading">
+          <h2>Our Popular Courses</h2>
         </div>
+      </div>
+      <div class="col-lg-12">
+        <div class="owl-courses-item owl-carousel">
+<c:forEach var="c" items="${marker}">
+          <div class="item thumbnail-jmt">
+            <a href="/marker/detail?id=${c.id}"><img src="/uimg/${c.img}" style="border-top-right-radius: 20px; border-top-left-radius: 20px;"></a>
+            <div class="down-content" style="border-bottom-right-radius: 20px; border-bottom-left-radius: 20px;">
+              <h4><a href="/marker/detail?id=${c.id}" class="markerTitleTag">${c.title}</a></h4>
+              <div class="info">
+                <div class="row">
+                  <div class="col-12">
+                    <span style="font-size: 13px; color: #bcbebf">${c.detail}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+</c:forEach>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
+
+
+
+
 
 
 <script>
@@ -192,7 +201,7 @@
             var mapContainer = document.querySelector('#map03 > #map');
             var mapOption = {
                 center: new kakao.maps.LatLng(lat, lng), // 지도의 중심좌표
-                level : 7 // 지도의 확대 레벨
+                level : 1 // 지도의 확대 레벨
             };
             map = new kakao.maps.Map(mapContainer, mapOption);
 

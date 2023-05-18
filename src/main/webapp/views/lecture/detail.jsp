@@ -171,7 +171,7 @@
             <div class="modal-footer">
                 <div class="main-button-yellow" style="text-align: center;">
                     <a href="#" id="cart_btn">ADD to List</a>
-                    <a href="#" id="go_cart">My List</a>
+                    <a href="/lecture/mycourse?id=${loginStudent.id}" id="go_cart">My List</a>
                     <a href="#" id="cartModalClose" data-dismiss="modal">Close</a>
                 </div>
             </div>

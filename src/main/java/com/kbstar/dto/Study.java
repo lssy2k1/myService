@@ -11,7 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 @NoArgsConstructor
 public class Study {
     private int id;
-    private String studentId;
+    private String writer;
     private String startTime;
     private String endTime;
     private String contents;
@@ -24,8 +24,8 @@ public class Study {
     private String studentName;
     private String studentImg;
 
-    public Study(String studentId, String startTime, String endTime, String contents, String fileName, String fileName_org) {
-        this.studentId = studentId;
+    public Study(String writer, String startTime, String endTime, String contents, String fileName, String fileName_org) {
+        this.writer = writer;
         this.startTime = startTime;
         this.endTime = endTime;
         this.contents = contents;
@@ -33,9 +33,9 @@ public class Study {
         this.fileName_org = fileName_org;
     }
 
-    public Study(int id, String studentId, String startTime, String endTime, String contents, String rdate, String fileName, String fileName_org) {
+    public Study(int id, String writer, String startTime, String endTime, String contents, String rdate, String fileName, String fileName_org) {
         this.id = id;
-        this.studentId = studentId;
+        this.writer = writer;
         this.startTime = startTime;
         this.endTime = endTime;
         this.contents = contents;
@@ -44,9 +44,9 @@ public class Study {
         this.fileName_org = fileName_org;
     }
 
-    public Study(int id, String studentId, String startTime, String endTime, String contents, String fileName, String fileName_org) {
+    public Study(int id, String writer, String startTime, String endTime, String contents, String fileName, String fileName_org) {
         this.id = id;
-        this.studentId = studentId;
+        this.writer = writer;
         this.startTime = startTime;
         this.endTime = endTime;
         this.contents = contents;
@@ -54,7 +54,4 @@ public class Study {
         this.fileName_org = fileName_org;
     }
 
-
-    public void setFormattedRdate(String formattedRdate) {
-    }
 }

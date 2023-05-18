@@ -52,7 +52,6 @@ public class LectureController {
     public String detail(Model model,Integer id) throws Exception {
         Lecture lecture;
         lecture = lectureService.get(id);
-
         model.addAttribute("lecture", lecture);
         model.addAttribute("center", dir+"detail");
         return "index";

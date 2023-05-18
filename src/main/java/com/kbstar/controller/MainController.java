@@ -64,12 +64,6 @@ public class MainController {
         return "index";
     }
 
-    @RequestMapping("/apply")
-    public String apply(Model model) throws Exception {
-        model.addAttribute("center", "apply");
-        return "index";
-    }
-
     @RequestMapping("/courses")
     public String courses(Model model) throws Exception {
         model.addAttribute("center", "courses");
@@ -100,18 +94,6 @@ public class MainController {
         return "index";
     }
 
-    @RequestMapping("/facts")
-    public String facts(Model model) throws Exception {
-        model.addAttribute("center", "facts");
-        return "index";
-    }
-
-    @RequestMapping("/upcoming")
-    public String upcoming(Model model) throws Exception {
-        model.addAttribute("center", "upcoming");
-        return "index";
-    }
-
     @RequestMapping("/loginimpl")
     public String loginimpl(Model model, String id, String pwd, HttpSession session) throws Exception {
         Student student = null;
@@ -130,7 +112,7 @@ public class MainController {
         }
         model.addAttribute("loginStudent", student);
         model.addAttribute("center", nextPage);
-        return "index";
+        return "redirect:/";
     }
 
     @RequestMapping("/register")
