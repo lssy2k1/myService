@@ -125,7 +125,16 @@
                 <div class="author-img"
                      style="background-image: url('/uimg/${student.img}') "></div>
                 <h1 id="colorlib-logo"><a href="/mypage">${student.name}</a></h1>
-                <span class="position">KB KOOKMIN BANK DIGI CAM 2TH </span>
+                <span class="position">
+                       <c:choose>
+                           <c:when test="${student.digi_sdate == '220201'}">
+                               KB KOOKMIN BANK DIGI CAM 1TH
+                           </c:when>
+                           <c:when test="${student.digi_sdate =='230201'}">
+                               KB KOOKMIN BANK DIGI CAM 2TH
+                           </c:when>
+                       </c:choose>
+                    </span>
             </div>
         </aside>
 
@@ -159,12 +168,15 @@
                                 <div class="form-group">
                                     <label>WITH KB : </label> <input type="date" name="com_sdate" id="com_sdate"
                                                                      class="form-control">
+                                    <p>${student.com_sdate}</p>
                                 </div>
                                 <div class="form-group">
                                     <label>WITH DIGI : </label>
                                     <div class="date_radio">
-                                        <input type="radio" name="digi_sdate" value="220201">Digi Campus 1기
-                                        <input type="radio" name="digi_sdate" value="230201">Digi Campus 2기
+                                        <input type="radio" name="digi_sdate" id="digi_sdate1" value="220201">Digi
+                                        Campus 1기
+                                        <input type="radio" name="digi_sdate" id="digi_sdate2" value="230201">Digi
+                                        Campus 2기
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -193,11 +205,11 @@
                                 <div class="row">
                                     <div class="col-md-10 col-md-offset-1 col-md-pull-1 animate-box"
                                          data-animate-effect="fadeInRight">
-<%--                                        <div class="form-group">--%>
-<%--&lt;%&ndash;                                            <input type="hidden" name="pwd" value="${student.pwd}" }>&ndash;%&gt;--%>
-<%--&lt;%&ndash;                                            <input type="password" name="pwd" id="pwd" class="form-control"&ndash;%&gt;--%>
-<%--&lt;%&ndash;                                                   placeholder="Please enter your password.">&ndash;%&gt;--%>
-<%--                                        </div>--%>
+                                        <%--                                        <div class="form-group">--%>
+                                        <%--&lt;%&ndash;                                            <input type="hidden" name="pwd" value="${student.pwd}" }>&ndash;%&gt;--%>
+                                        <%--&lt;%&ndash;                                            <input type="password" name="pwd" id="pwd" class="form-control"&ndash;%&gt;--%>
+                                        <%--&lt;%&ndash;                                                   placeholder="Please enter your password.">&ndash;%&gt;--%>
+                                        <%--                                        </div>--%>
                                         <div class="form-group">
                                             <textarea style="resize: none;" name="detail" id="detail" cols="30" rows="7"
                                                       class="form-control"
@@ -257,7 +269,51 @@
 
 <!-- MAIN JS -->
 <script src="/js/main.js"></script>
+<script>
+    // 기존 회원이 선택한 MBTI 값을 가져옵니다.
+    var selectedMBTI = "${student.mbti}";
 
+    // MBTI 선택 옵션들의 NodeList를 가져옵니다.
+    var mbtiOptions = document.querySelectorAll('#mbti option');
+
+    var selectedDIGIDATE = "${student.digi_sdate}";
+
+    // digi_sdate 라디오 버튼의 NodeList를 가져옵니다.
+    var digiDateOptions = document.querySelectorAll('input[name="digi_sdate"]');
+
+    // NodeList를 Array로 변환하여 각 옵션을 순회하며 선택 여부를 확인합니다.
+    Array.from(mbtiOptions).forEach(function (option) {
+        if (option.value === selectedMBTI) {
+            // 기존 회원이 선택한 MBTI와 일치하는 옵션을 선택합니다.
+            option.selected = true;
+        }
+    });
+
+    // NodeList를 Array로 변환하여 각 라디오 버튼을 순회하며 선택 여부를 확인합니다.
+    Array.from(digiDateOptions).forEach(function (radio) {
+        if (radio.value === selectedDIGIDATE) {
+            // 기존 회원이 선택한 digi_sdate와 일치하는 라디오 버튼을 선택합니다.
+            radio.checked = true;
+        }
+    });
+
+    var comSdateInput = document.getElementById("com_sdate");
+    var comSdateValue = "${student.com_sdate}";
+
+    // 값이 존재하는 경우
+    if (comSdateValue) {
+        // 년, 월, 일 분리
+        var year = comSdateValue.substr(0, 2);
+        var month = comSdateValue.substr(2, 2);
+        var day = comSdateValue.substr(4, 2);
+
+        // 날짜 형식으로 변환
+        var formattedDate = "20" + year + "-" + month + "-" + day;
+
+        // 날짜 값을 <input type="date"> 요소에 설정
+        comSdateInput.value = formattedDate;
+    }
+</script>
 </body>
 </html>
 

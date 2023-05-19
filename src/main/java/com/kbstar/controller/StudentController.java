@@ -98,16 +98,22 @@ public class StudentController {
     @RequestMapping("/profile_edit")
     public String profileEdit(Model model, String id, HttpSession session) throws Exception {
         Mypage mypage = null;
-
         try {
             Student loginStudent = (Student) session.getAttribute("loginStudent");
             mypage = mypageService.get(loginStudent.getId());
-
+            //comsdate과 digidate formatter
+            SimpleDateFormat comsdateformatter = new SimpleDateFormat("yyMMdd");
+            Date comSdate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(mypage.getCom_sdate());
+            String formattedComSdate = comsdateformatter.format(comSdate);
+            mypage.setCom_sdate(formattedComSdate);
+            SimpleDateFormat digisdateformatter = new SimpleDateFormat("yyMMdd");
+            Date digiSdate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(mypage.getDigi_sdate());
+            String formattedDigiSdate = digisdateformatter.format(digiSdate);
+            mypage.setDigi_sdate(formattedDigiSdate);
         } catch (Exception e) {
             e.printStackTrace();
             throw new Exception(e.getMessage());
         }
-
         model.addAttribute("student", mypage);
         return "profileEdit";
     }
