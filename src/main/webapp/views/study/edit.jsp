@@ -141,6 +141,8 @@
         margin-bottom: 10px;
     }
 
+    label
+
 </style>
 
 <script>
@@ -185,10 +187,10 @@
                                 </div>
                                 <div class="form-group">
                                     <div style="width:50%; float:left;">
-                                        <label for="startTime" class="edit_label">From</label>
+                                        <label for="startTime" class="edit_label">From(Original: ${study.startTime})</label>
                                     </div>
                                     <div style="width:50%; float:left;">
-                                        <label for="startTime" class="edit_label">Until</label>
+                                        <label for="startTime" class="edit_label">Until(Original: ${study.endTime})</label>
                                     </div>
                                     <div class="edit_time" style="width:50%; float:left;">
                                         <input type="datetime-local" name="startTime" id="startTime" style="width: 100%;">
@@ -198,7 +200,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <span class="edit_label">Select File (Original: ${study.fileName_org} )</span>
+                                    <span class="edit_label">Select File (Original: ${study.fileName_org})</span>
                                     <input type="file" name="file" class="form-control" id="file">
                                 </div>
                                 <div class="form-group">

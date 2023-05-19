@@ -2,7 +2,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--  center1--%>
 <!-- ***** Main Banner Area Start ***** -->
-
+<style>
+    .ancBoard {
+        color: #f5a425
+    }
+</style>
 
 <section class="section main-banner" id="top" data-section="section1">
     <video autoplay muted loop id="bg-video">
@@ -57,7 +61,7 @@
                             <img src="https://cdn-icons-png.flaticon.com/512/1126/1126012.png" alt="">
                         </div>
                         <div class="down-content">
-                            <h4>New lecture open!</h4>
+                            <h4><a href="/lecture/detail?id=100033" class="ancBoard">New lecture open!</a></h4>
                             <p>수강생분들이 기다리시던 그 강의!</p>
                             <p><span style="font-weight:bold; color: orange">
                                 "한입 크기로 잘라 먹는 리액트(React.js)"
@@ -71,8 +75,8 @@
                             <img src="https://cdn-icons-png.flaticon.com/512/2545/2545619.png" alt="">
                         </div>
                         <div class="down-content">
-                            <h4>스터디일지왕</h4>
-                            <p>4월 스터디일지왕 <span style="font-weight:bold; color: orange">박선미 대리님</span>!</p>
+                            <h4><a href="/anc/detail?id=1003"class="ancBoard"> 스터디일지왕</a></h4>
+                            <p>4월 스터디일지왕 <span style="font-weight:bold; color: orange">기피티 대리님</span>!</p>
                             <p> 4월 한달 간 29회의 스터디일지를 작성하셨습니다. </p>
                             <p>축하합니다!</p>
                         </div>
@@ -83,7 +87,7 @@
                             <img src="https://cdn-icons-png.flaticon.com/512/2454/2454297.png" alt="">
                         </div>
                         <div class="down-content">
-                            <h4>Happy Birthday!</h4>
+                            <h4><a href="anc/detail?id=1004" class="ancBoard">Happy Birthday!</a></h4>
                             <p>생일 축하합니다! 소중한 <span style="font-weight:bold; color: orange">문대호 대리님</span>! </p>
                             <p><span style="font-weight:bold; color: orange">5월 5일 문대호 대리님</span>의 생일입니다. 많은 축하 부탁드립니다.
                             </p>
@@ -96,7 +100,7 @@
                             <img src="/uimg/강사님.jpeg" alt="">
                         </div>
                         <div class="down-content">
-                            <h4><span style="color: orange">긴급공지!</span> 5/15 스승의날 행사안내</h4>
+                            <h4><a href="/anc/detail?id=1002" class="ancBoard"><span style="color: orange">긴급공지!</span> 5/15 스승의날 행사안내</a></h4>
                             <p>5/15일 스승의 날을 맞이하여 이진만 강사님께 카네이션 수여식이 있을 예정입니다.</p>
                             <p>DIGI MEMBER분들은 <span style="color: orange">12:50분</span>까지 자리에 착석해주세요!</p>
                         </div>

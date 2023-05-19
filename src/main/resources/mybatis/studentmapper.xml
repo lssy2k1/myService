@@ -3,7 +3,6 @@
         PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.kbstar.mapper.StudentMapper">
-
     <select id="select" parameterType="string" resultType="student">
         SELECT * FROM student WHERE ID=#{id}
     </select>
@@ -16,11 +15,10 @@
     </insert>
     <update id="update" parameterType="student">
         UPDATE student SET name=#{name}, detail=#{detail}
-                        , email=#{email}, contact=#{contact}, img=#{img}
-                        WHERE id=#{id}
+                         , email=#{email}, contact=#{contact}, img=#{img}, facebook=#{facebook}, insta=#{insta}
+        WHERE id=#{id}
     </update>
     <delete id="delete" parameterType="string">
         DELETE FROM student WHERE ID=#{id}
     </delete>
-
 </mapper>

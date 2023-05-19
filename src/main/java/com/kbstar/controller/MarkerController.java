@@ -94,8 +94,18 @@ public class MarkerController {
         MultipartFile mf = marker.getImgfile();
         String img = mf.getOriginalFilename();
 
+        int markerId = marker.getId();
+        log.info(markerId+"이거");
+        Marker Origin = markerService.get(markerId);
+        log.info(Origin.toString()+"이거");
+        String OriginImg = Origin.getImg();
+        log.info(OriginImg+"이거");
+
         if (img.equals("") || img == null) {
+
+            marker.setImg(OriginImg);
             markerService.modify(marker);
+
         } else {
             marker.setImg(img);
             markerService.modify(marker);

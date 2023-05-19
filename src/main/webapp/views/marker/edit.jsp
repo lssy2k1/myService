@@ -109,6 +109,7 @@
                             </div>
                             <div class="down-content">
                                 <form id="marker_form">
+                                    <input type="hidden" id="id" name="id" value="${marker.id}">
                                     <input type="hidden" id="writer" name="writer" value="${marker.writer}">
                                     <div class="form-group">
                                         <input type="title" class="form-control" id="title" name="title"
@@ -159,7 +160,7 @@
                                     </div>
 
                                     <button type="button" id="register_btn"
-                                            class="btn btn-warning float-right">등록
+                                            class="btn btn-warning float-right">EDIT
                                     </button>
                                     <hr>
 

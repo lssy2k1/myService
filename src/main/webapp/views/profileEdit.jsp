@@ -142,7 +142,7 @@
                     <form id="profile_form" action="">
                         <div class="row">
                             <div class="col-md-5">
-                                <div id="preview_box"><img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png"
+                                <div id="preview_box"><img src="/uimg/${student.img}"
                                                            id="preview"/></div>
                                 <div class="form-group">
                                     <label>PROFILE IMG : </label>

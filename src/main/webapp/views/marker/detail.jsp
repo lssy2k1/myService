@@ -79,7 +79,7 @@
                             <div class="main-button-red">
                                 <a href="javascript:history.back()">Back To Course List</a>
                                 <c:choose>
-                                    <c:when test="${obj.writer==loginStudent.id}">
+                                    <c:when test="${marker.writer==loginStudent.id}">
                                         <a href="/marker/edit?id=${marker.id}">EDIT</a>
                                         <a href="/marker/delete?id=${marker.id}">DELETE</a>
                                     </c:when>

@@ -119,6 +119,8 @@ public class StudentController {
         String img = mf.getOriginalFilename();
         log.info("-------------test----------------");
         log.info(img);
+
+
         if (img.equals("") || img == null) {
             studentService.modify(student);
             mypageService.modify(page);

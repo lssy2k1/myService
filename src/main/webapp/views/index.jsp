@@ -50,15 +50,6 @@
                         <li><a href="/" class="active">Home</a></li>
                         <c:choose>
                             <c:when test="${loginStudent!=null}">
-                                <li><a href="/digimembers">Digi Members</a></li>
-                                <li class="has-sub">
-                                    <a href="javascript:void(0)">JMTGR</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="/marker/all">View JMT</a></li>
-                                        <li><a href="/marker/add">Add Marker</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="/anc/allpage">Board</a></li>
 <%--                                <li><a href="/apply">Chat</a></li>--%>
                                 <li class="has-sub">
                                     <a href="javascript:void(0)">Courses</a>
@@ -68,6 +59,7 @@
                                     </ul>
                                 </li>
                                 <li><a href="/study/allpage">Study</a></li>
+                                <li><a href="/anc/allpage">Board</a></li>
 <%--                                <li class="has-sub">--%>
 <%--                                    <a href="javascript:void(0)">Study</a>--%>
 <%--                                    <ul class="sub-menu">--%>
@@ -76,6 +68,13 @@
 <%--                                    </ul>--%>
 <%--                                </li>--%>
                                 <li><a href="/att_check">Attendance</a></li>
+                                <li class="has-sub">
+                                    <a href="javascript:void(0)">JMTGR</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="/marker/all">View JMT</a></li>
+                                        <li><a href="/marker/add">Add Marker</a></li>
+                                    </ul>
+                                </li>
 <%--                                <li class="has-sub">--%>
 <%--                                    <!--메뉴명 추후 정정 예정-->--%>
 <%--                                    <a href="javascript:void(0)">BlahBlah</a>--%>
@@ -84,6 +83,7 @@
 <%--                                        <li><a href="#">Diagosis</a></li>--%>
 <%--                                    </ul>--%>
 <%--                                </li>--%>
+                                <li><a href="/digimembers">Digi Members</a></li>
                                 <li><a href="/mypage">MyPage</a></li>
                                 <li><a href="/logout">LOGOUT</a></li>
                             </c:when>
