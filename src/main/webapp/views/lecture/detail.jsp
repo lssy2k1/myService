@@ -61,6 +61,8 @@
                     success: function (result) {
                         if(result == 0){
                             $('#cart_msg').html('Sorry, Already in Your List!');
+                            $('#cart_btn').hide();
+                            $('#go_cart').show();
                         } else if(result == 1){
                             $('#cart_btn').hide();
                             $('#go_cart').show();

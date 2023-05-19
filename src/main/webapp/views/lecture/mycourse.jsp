@@ -34,7 +34,7 @@
     #fixedDiv {
         position: fixed;
         right: 100px;
-        top: 41%;
+        top: 43.5%;
         transform: translate(0, -50%);
         width: 300px;
         height: 250px;

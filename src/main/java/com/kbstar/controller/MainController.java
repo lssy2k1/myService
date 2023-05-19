@@ -112,7 +112,7 @@ public class MainController {
         }
         model.addAttribute("loginStudent", student);
         model.addAttribute("center", nextPage);
-        return "redirect:/";
+        return "index";
     }
 
     @RequestMapping("/register")

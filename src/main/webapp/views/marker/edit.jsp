@@ -156,14 +156,14 @@
                                         <input type="file" class="form-control"
                                                id="imgfile" name="imgfile" onchange="readURL(this)"
                                                placeholder="Input image">
-                                        <div id="preview_box"><img id="preview"/></div>
+                                        <div id="preview_box"><img src="/uimg/${marker.img}"
+                                                                   id="preview"/></div>
                                     </div>
 
                                     <button type="button" id="register_btn"
                                             class="btn btn-warning float-right">EDIT
                                     </button>
                                     <hr>
-
                                 </form>
                             </div>
                         </div>
@@ -173,3 +173,33 @@
         </div>
     </div>
 </section>
+
+<script>
+
+    let selectedKeyword = "${marker.keyword}";
+    let keywordOptions = document.querySelectorAll('#keyword option');
+
+
+    Array.from(keywordOptions).forEach(function (option) {
+        if (option.value === selectedKeyword) {
+            // 기존 회원이 선택한 MBTI와 일치하는 옵션을 선택합니다.
+            option.selected = true;
+        }
+    });
+
+
+    let selectedStar = "${marker.star}";
+
+
+    let starOptions = document.querySelectorAll('#star option');
+
+
+    Array.from(starOptions).forEach(function (option) {
+        if (option.value === selectedStar) {
+            // 기존 회원이 선택한 MBTI와 일치하는 옵션을 선택합니다.
+            option.selected = true;
+        }
+    });
+
+
+</script>
